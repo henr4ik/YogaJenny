@@ -324,3 +324,10 @@ html {
 .lotus-image:hover {
   transform: scale(1.05);
 }
+.popup-lotus-image {
+  width: 90px;
+  display: block;
+  margin: 0 auto 10px auto;
+
+  filter: drop-shadow(0 4px 12px rgba(180, 90, 150, 0.2));
+}
