@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./index.css";
+import "./App.css";
 
 export default function App() {
   const [selectedCourse, setSelectedCourse] = useState<any>(null);
@@ -38,6 +38,11 @@ export default function App() {
         <p className="hero-top">RUHE · KRAFT · BALANCE</p>
 
         <h1>YOGA mit JENNY</h1>
+        <img
+          src="/yoga-logo.jpg"
+          alt="Yoga mit Jenny"
+          className="main-yoga-image"
+        />
 
         <div className="lotus">🪷</div>
 

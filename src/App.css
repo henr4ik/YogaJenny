@@ -310,3 +310,17 @@ html {
   color: #7a165c;
   text-decoration: none;
 }
+.lotus-image {
+  width: 90px;
+  display: block;
+  margin: 0 auto 20px auto;
+  opacity: 0.95;
+
+  filter: drop-shadow(0 6px 18px rgba(180, 90, 150, 0.25));
+
+  transition: transform 0.3s ease;
+}
+
+.lotus-image:hover {
+  transform: scale(1.05);
+}
