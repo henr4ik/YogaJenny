@@ -5,6 +5,20 @@ export default function App() {
   const [selectedCourse, setSelectedCourse] = useState<any>(null);
   const [name, setName] = useState("");
   const [date, setDate] = useState("");
+  const getCourseAvailability = (selectedDate: string) => {
+  if (!selectedDate) return null;
+
+  const day = new Date(selectedDate).getDay();
+
+  // Montag = 1
+  // Dienstag = 2
+
+  if (day === 1 || day === 2) {
+    return "12 Plätze frei";
+  }
+
+  return "Kein Kurs verfügbar";
+};
   const [pillow, setPillow] = useState(false);
 
   const courses = [
@@ -13,21 +27,21 @@ export default function App() {
       level: "Einsteiger",
       time: "Montag · 18:00 Uhr",
       places: "12 Plätze frei",
-      price: "15€",
+      price: "12€",
     },
     {
       title: "Abend Flow Yoga",
       level: "Mittelstufe",
       time: "Mittwoch · 19:00 Uhr",
-      places: "8 Plätze frei",
-      price: "18€",
+      places: "12 Plätze frei",
+      price: "12€",
     },
     {
       title: "Ruhe & Balance",
       level: "Alle Level",
       time: "Freitag · 17:30 Uhr",
       places: "10 Plätze frei",
-      price: "16€",
+      price: "12€",
     },
   ];
 
@@ -124,6 +138,12 @@ export default function App() {
               value={date}
               onChange={(e) => setDate(e.target.value)}
             />
+            {date && (
+            <div className="spots-info">
+              {getCourseAvailability(date)}
+            </div>
+            )}
+           
             <button
               type="button"
               className={`pillow-button ${pillow ? "active" : ""}`}

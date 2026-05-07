@@ -340,3 +340,13 @@ html {
 .popup-lotus-image:hover {
   transform: scale(1.05);
 }
+.spots-info {
+  margin-top: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #7a165c;
+}
+
+.full {
+  color: #d33;
+}
