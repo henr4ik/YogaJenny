@@ -327,7 +327,7 @@ html {
 .popup-lotus-image {
   width: 50px;
   display: block;
-  margin: 0 auto 10px auto;
+  margin: 100 auto 10px auto;
 
   filter: drop-shadow(0 4px 12px rgba(180, 90, 150, 0.2));
 }
