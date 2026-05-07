@@ -182,3 +182,19 @@
     border-right-color: var(--border);
   }
 }
+.main-yoga-image {
+  width: 320px;
+  max-width: 85%;
+  display: block;
+  margin: 30px auto;
+
+  border-radius: 30px;
+
+  filter: drop-shadow(0 10px 25px rgba(140, 0, 90, 0.18));
+
+  transition: transform 0.3s ease;
+}
+
+.main-yoga-image:hover {
+  transform: scale(1.03);
+}
