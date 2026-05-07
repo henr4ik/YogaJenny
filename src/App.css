@@ -34,10 +34,10 @@ html {
 }
 
 .main-yoga-image {
-  width: 320px;
+  width: 400px;
   max-width: 85%;
   display: block;
-  margin: 30px auto;
+  margin: 0px auto -80px auto;
   border-radius: 30px;
   filter: drop-shadow(0 10px 25px rgba(140, 0, 90, 0.18));
   transition: transform 0.3s ease;
