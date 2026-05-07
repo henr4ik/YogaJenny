@@ -325,9 +325,18 @@ html {
   transform: scale(1.05);
 }
 .popup-lotus-image {
-  width: 50px;
+  width: 70px;
   display: block;
-  margin: 100 auto 10px auto;
+
+  margin: -10px auto 15px auto;
+
+  opacity: 0.95;
 
   filter: drop-shadow(0 4px 12px rgba(180, 90, 150, 0.2));
+
+  transition: transform 0.3s ease;
+}
+
+.popup-lotus-image:hover {
+  transform: scale(1.05);
 }
