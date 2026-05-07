@@ -111,7 +111,7 @@ export default function App() {
               value={date}
               onChange={(e) => setDate(e.target.value)}
             />
-            <<button
+            <button
               type="button"
               className={`pillow-button ${pillow ? "active" : ""}`}
               onClick={() => setPillow(!pillow)}
