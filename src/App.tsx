@@ -1,4 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { createClient } from "@supabase/supabase-js";
+const supabase = createClient(
+  "https://anybtcupfycqqdhitxcj.supabase.co",
+  "sb_publishable_g1hz9SoW5eExzDmLpou9zw_Dak3WVbD"
+);
 import "./App.css";
 
 export default function App() {
