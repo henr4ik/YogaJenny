@@ -25,6 +25,50 @@ export default function App() {
   return "Kein Kurs verfügbar";
 };
   const [pillow, setPillow] = useState(false);
+  const [bookingsCount, setBookingsCount] = useState(0);
+  
+  const handleBooking = async () => {
+  if (!date || !name) {
+    alert("Bitte Name und Datum auswählen");
+    return;
+  }
+
+  const { error } = await supabase.from("bookings").insert([
+    {
+      name: name,
+      course: selectedCourse.title,
+      booking_date: date,
+      needs_pillow: pillow,
+    },
+  ]);
+
+  if (error) {
+    console.log(error);
+    alert("Fehler bei der Buchung");
+  } else {
+    alert("Buchung erfolgreich!");
+
+    setBookingsCount(bookingsCount + 1);
+  }
+};
+
+useEffect(() => {
+  const loadBookings = async () => {
+    if (!date || !selectedCourse) return;
+
+    const { data } = await supabase
+      .from("bookings")
+      .select("*")
+      .eq("booking_date", date)
+      .eq("course", selectedCourse.title);
+
+    if (data) {
+      setBookingsCount(data.length);
+    }
+  };
+
+  loadBookings();
+}, [date, selectedCourse]);
 
   const courses = [
     {
@@ -143,12 +187,14 @@ export default function App() {
               value={date}
               onChange={(e) => setDate(e.target.value)}
             />
-            {date && (
-            <div className="spots-info">
-              {getCourseAvailability(date)}
-            </div>
-            )}
-           
+            
+           {date && (
+          <div className="spots-info">
+            {12 - bookingsCount > 0
+              ? `${12 - bookingsCount} Plätze frei`
+              : "Leider ausgebucht"}
+          </div>
+          )}
             <button
               type="button"
               className={`pillow-button ${pillow ? "active" : ""}`}
@@ -175,20 +221,9 @@ export default function App() {
               </div>
             </button>
 
-            <a
-              className="mail-btn"
-              href={`mailto:jenny.wenger@t-online.de?subject=Yoga Anmeldung&body=
-Hallo Jenny,%0D%0A%0D%0A
-ich möchte mich gerne anmelden.%0D%0A%0D%0A
-Kurs: ${selectedCourse.title}%0D%0A
-Zeit: ${selectedCourse.time}%0D%0A
-Datum: ${date}%0D%0A
-Name: ${name}%0D%0A
-Polster benötigt: ${pillow ? "Ja" : "Nein"}%0D%0A%0D%0A
-Liebe Grüße`}
-            >
-              Jetzt buchen
-            </a>
+            <button className="mail-btn" onClick={handleBooking}>
+            Jetzt buchen
+            </button>
           </div>
         </div>
       )}
