@@ -183,11 +183,51 @@ body {
   font-size: 16px;
 }
 
-.checkbox {
+.pillow-box {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
+  padding: 18px 20px;
+  border-radius: 22px;
+  background: #fff4fb;
+  border: 2px solid #f3c6e7;
+  cursor: pointer;
+  transition: 0.3s;
   margin-bottom: 25px;
+}
+
+.pillow-box:hover {
+  transform: scale(1.02);
+  border-color: #cb4bb2;
+}
+
+.pillow-box.active {
+  background: linear-gradient(to right, #ffe3f7, #fff0fb);
+  border-color: #cb4bb2;
+}
+
+.pillow-box input {
+  display: none;
+}
+
+.custom-check {
+  width: 28px;
+  height: 28px;
+  border-radius: 10px;
+  background: white;
+  border: 2px solid #cb4bb2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #cb4bb2;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.pillow-box span {
+  font-size: 17px;
+  font-weight: 600;
+  color: #651248;
 }
 
 .mail-btn {
