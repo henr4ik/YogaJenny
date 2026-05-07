@@ -105,7 +105,7 @@ export default function App() {
             <img
             src="/lotus.png"
             alt="Lotus"
-            className="lotus-image"
+            className="popup-lotus-image"
             />
 
             <h3>{selectedCourse.title}</h3>
