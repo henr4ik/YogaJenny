@@ -1,29 +1,41 @@
-import { useEffect, useState } from "react";
-import { createClient } from "@supabase/supabase-js";
-import "./App.css";
+import { useState } from "react";
+import "./index.css";
 
-const supabase = createClient(
-  "https://anybtcupfycqqdhitxcj.supabase.co",
-  "DEIN_SUPABASE_PUBLIC_KEY"
-);
+export default function App() {
+  const [selectedCourse, setSelectedCourse] = useState<any>(null);
+  const [name, setName] = useState("");
+  const [date, setDate] = useState("");
+  const [pillow, setPillow] = useState(false);
 
-export default function YogaWebsite() {
-  const [kurse, setKurse] = useState<any[]>([]);
-
-  useEffect(() => {
-    ladeKurse();
-  }, []);
-
-  async function ladeKurse() {
-    const { data } = await supabase.from("kurse").select("*");
-    if (data) setKurse(data);
-  }
+  const courses = [
+    {
+      title: "Yoga für Einsteiger",
+      level: "Einsteiger",
+      time: "Montag · 18:00 Uhr",
+      places: "12 Plätze frei",
+      price: "15€",
+    },
+    {
+      title: "Abend Flow Yoga",
+      level: "Mittelstufe",
+      time: "Mittwoch · 19:00 Uhr",
+      places: "8 Plätze frei",
+      price: "18€",
+    },
+    {
+      title: "Ruhe & Balance",
+      level: "Alle Level",
+      time: "Freitag · 17:30 Uhr",
+      places: "10 Plätze frei",
+      price: "16€",
+    },
+  ];
 
   return (
     <div className="app">
       {/* HERO */}
       <section className="hero">
-        <p className="top-text">RUHE · KRAFT · BALANCE</p>
+        <p className="hero-top">RUHE · KRAFT · BALANCE</p>
 
         <h1>YOGA mit JENNY</h1>
 
@@ -36,65 +48,102 @@ export default function YogaWebsite() {
 
         <div className="hero-buttons">
           <a href="#kurse">Kurse ansehen</a>
+
           <a href="#kontakt">Kontakt</a>
         </div>
       </section>
 
       {/* KURSE */}
-      <section className="kurse-section" id="kurse">
-        <h2>Unsere Kurse</h2>
+      <section className="courses-section" id="kurse">
+        <p className="section-top">UNSERE KURSE</p>
 
-        <div className="kurse-grid">
-          {kurse.map((kurs) => (
-            <div className="kurs-card" key={kurs.id}>
-              <h3>{kurs.name}</h3>
+        <h2>Finde deinen perfekten Yoga Kurs</h2>
 
-              <p>
-                <strong>Level:</strong> {kurs.level}
-              </p>
+        <div className="courses-grid">
+          {courses.map((course, index) => (
+            <div className="course-card" key={index}>
+              <div className="emoji">🧘‍♀️</div>
 
-              <p>
-                <strong>Tag:</strong> {kurs.tag}
-              </p>
+              <p className="level">{course.level}</p>
 
-              <p>
-                <strong>Uhrzeit:</strong> {kurs.uhrzeit}
-              </p>
+              <h3>{course.title}</h3>
 
-              <p>
-                <strong>Trainerin:</strong> Jenny
-              </p>
+              <p>{course.time}</p>
 
-              <p>
-                <strong>Preis:</strong> {kurs.preis} €
-              </p>
+              <p>{course.places}</p>
 
-              <p>
-                <strong>Freie Plätze:</strong> {kurs.freie_plaetze}
-              </p>
+              <p>{course.price}</p>
 
-              <a
-                href={`mailto:jenny.wenger@t-online.de?subject=Yoga Anmeldung&body=
-Hallo Jenny,%0D%0A%0D%0A
-ich möchte mich gerne anmelden.%0D%0A%0D%0A
-Kurs: ${kurs.name}%0D%0A
-Tag: ${kurs.tag}%0D%0A
-Uhrzeit: ${kurs.uhrzeit}%0D%0A%0D%0A
-Name:%0D%0A
-Telefon:%0D%0A%0D%0A
-Liebe Grüße`}
-              >
-                <button className="anmelden-btn">
-                  Jetzt einschreiben
-                </button>
-              </a>
+              <button onClick={() => setSelectedCourse(course)}>
+                Jetzt einschreiben
+              </button>
             </div>
           ))}
         </div>
       </section>
 
+      {/* POPUP */}
+      {selectedCourse && (
+        <div className="popup-overlay">
+          <div className="popup">
+            <button
+              className="close-btn"
+              onClick={() => setSelectedCourse(null)}
+            >
+              ×
+            </button>
+
+            <div className="popup-lotus">🪷</div>
+
+            <h3>{selectedCourse.title}</h3>
+
+            <p>{selectedCourse.time}</p>
+
+            <input
+              type="text"
+              placeholder="Dein Name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+
+            <input
+              type="date"
+              value={date}
+              onChange={(e) => setDate(e.target.value)}
+            />
+
+            <label className="checkbox">
+              <input
+                type="checkbox"
+                checked={pillow}
+                onChange={(e) => setPillow(e.target.checked)}
+              />
+
+              Ich benötige ein Polster
+            </label>
+
+            <a
+              className="mail-btn"
+              href={`mailto:jenny.wenger@t-online.de?subject=Yoga Anmeldung&body=
+Hallo Jenny,%0D%0A%0D%0A
+ich möchte mich gerne anmelden.%0D%0A%0D%0A
+Kurs: ${selectedCourse.title}%0D%0A
+Zeit: ${selectedCourse.time}%0D%0A
+Datum: ${date}%0D%0A
+Name: ${name}%0D%0A
+Polster benötigt: ${pillow ? "Ja" : "Nein"}%0D%0A%0D%0A
+Liebe Grüße`}
+            >
+              Jetzt buchen
+            </a>
+          </div>
+        </div>
+      )}
+
       {/* KONTAKT */}
-      <section className="kontakt-section" id="kontakt">
+      <section className="contact-section" id="kontakt">
+        <div className="lotus">🪷</div>
+
         <h2>Kontakt</h2>
 
         <p>Jenny Wenger</p>
@@ -102,7 +151,6 @@ Liebe Grüße`}
         <p>Zeesen</p>
 
         <p>
-          E-Mail:{" "}
           <a href="mailto:jenny.wenger@t-online.de">
             jenny.wenger@t-online.de
           </a>
