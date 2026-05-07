@@ -10,20 +10,9 @@ export default function App() {
   const [selectedCourse, setSelectedCourse] = useState<any>(null);
   const [name, setName] = useState("");
   const [date, setDate] = useState("");
-  const getCourseAvailability = (selectedDate: string) => {
-  if (!selectedDate) return null;
+  
 
-  const day = new Date(selectedDate).getDay();
-
-  // Montag = 1
-  // Dienstag = 2
-
-  if (day === 1 || day === 2) {
-    return "12 Plätze frei";
-  }
-
-  return "Kein Kurs verfügbar";
-};
+ 
   const [pillow, setPillow] = useState(false);
   const [bookingsCount, setBookingsCount] = useState(0);
   
