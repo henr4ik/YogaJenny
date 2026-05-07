@@ -111,16 +111,31 @@ export default function App() {
               value={date}
               onChange={(e) => setDate(e.target.value)}
             />
+            <<button
+              type="button"
+              className={`pillow-button ${pillow ? "active" : ""}`}
+              onClick={() => setPillow(!pillow)}
+            >
+              <div className="pillow-left">
+                <div className="pillow-icon">
+                  {pillow ? "🪷" : "☁️"}
+                </div>
 
-            <label className="checkbox">
-              <input
-                type="checkbox"
-                checked={pillow}
-                onChange={(e) => setPillow(e.target.checked)}
-              />
+                <div className="pillow-text">
+                  <strong>Yoga Polster</strong>
 
-              Ich benötige ein Polster
-            </label>
+                  <span>
+                    {pillow
+                      ? "Polster wird bereitgestellt"
+                      : "Polster hinzufügen"}
+                  </span>
+                </div>
+              </div>
+
+              <div className="pillow-status">
+                {pillow ? "✓" : "+"}
+              </div>
+            </button>
 
             <a
               className="mail-btn"

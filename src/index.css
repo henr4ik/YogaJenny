@@ -183,55 +183,83 @@ body {
   font-size: 16px;
 }
 
-.pillow-toggle {
+.pillow-button {
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  border: none;
+  border-radius: 28px;
   padding: 18px 22px;
-  border-radius: 25px;
-  background: #fff4fb;
-  border: 2px solid #f3c6e7;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   cursor: pointer;
   transition: all 0.3s ease;
   margin-bottom: 25px;
-  user-select: none;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
 }
 
-.pillow-toggle:hover {
-  transform: scale(1.02);
-  border-color: #cb4bb2;
-  box-shadow: 0 8px 25px rgba(203, 75, 178, 0.15);
+.pillow-button:hover {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 12px 30px rgba(203, 75, 178, 0.2);
 }
 
-.pillow-toggle.active {
+.pillow-button.active {
   background: linear-gradient(to right, #cb4bb2, #ff92dd);
-  border-color: #cb4bb2;
   color: white;
 }
 
-.toggle-circle {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background: white;
+.pillow-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.pillow-icon {
+  width: 55px;
+  height: 55px;
+  border-radius: 18px;
+  background: #fff4fb;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
-  transition: 0.3s;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  font-size: 24px;
 }
 
-.pillow-toggle.active .toggle-circle {
-  transform: translateX(5px) scale(1.05);
+.pillow-button.active .pillow-icon {
+  background: rgba(255,255,255,0.25);
 }
 
-.pillow-toggle span {
-  flex: 1;
-  text-align: center;
+.pillow-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.pillow-text strong {
   font-size: 17px;
-  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.pillow-text span {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.pillow-status {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #f7d5ed;
+  color: #cb4bb2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.pillow-button.active .pillow-status {
+  background: white;
 }
 
 .mail-btn {
