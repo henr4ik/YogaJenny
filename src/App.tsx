@@ -44,7 +44,11 @@ export default function App() {
           className="main-yoga-image"
         />
 
-        <div className="lotus">🪷</div>
+        <img
+      src="/lotus.png"
+      alt="Lotus"
+      className="lotus-image"
+      />
 
         <p className="hero-text">
           Entdecke entspannende Yoga-Kurse in Zeesen. Stärke Körper und Geist
@@ -98,7 +102,11 @@ export default function App() {
               ×
             </button>
 
-            <div className="popup-lotus">🪷</div>
+            <img
+            src="/lotus.png"
+            alt="Lotus"
+            className="lotus-image"
+            />
 
             <h3>{selectedCourse.title}</h3>
 
@@ -162,7 +170,11 @@ Liebe Grüße`}
 
       {/* KONTAKT */}
       <section className="contact-section" id="kontakt">
-        <div className="lotus">🪷</div>
+        <img
+          src="/lotus.png"
+          alt="Lotus"
+          className="lotus-image"
+        />
 
         <h2>Kontakt</h2>
 
