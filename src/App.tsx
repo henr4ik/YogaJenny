@@ -67,7 +67,7 @@ useEffect(() => {
       price: "12€",
     },
     {
-      title: "Einsteiger Yoga",
+      title: "Yoga für Einsteiger",
       level: "Einsteiger",
       time: "Dienstag · 17:00 Uhr",
       price: "12€",
