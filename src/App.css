@@ -63,7 +63,7 @@ html {
   display: flex;
   justify-content: center;
   gap: 20px;
-  margin-top: 150px;
+  margin-top: 80px;
 }
 
 .hero-buttons a {
@@ -320,7 +320,7 @@ html {
 .lotus-image {
   width: 500px;
   display: block;
-  margin: 50px auto -130px auto;
+  margin: 70px auto -130px auto;
   opacity: 0.95;
 
   filter: drop-shadow(0 6px 18px rgba(180, 90, 150, 0.25));
