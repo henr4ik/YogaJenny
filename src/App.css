@@ -295,7 +295,7 @@ html {
 .close-btn {
   position: absolute;
   right: 25px;
-  top: 120px;
+  top: 20px;
   border: none;
   background: none;
   font-size: 36px;
@@ -368,4 +368,15 @@ html {
 
   margin-top: -20px;
   margin-bottom: -10px;
+}
+
+.popup-time {
+  margin-top: 20px;
+  margin-bottom: 30px;
+
+  font-size: 22px;
+}
+
+.date-input {
+  margin-top: 25px;
 }
