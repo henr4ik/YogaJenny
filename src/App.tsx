@@ -128,8 +128,6 @@ useEffect(() => {
 
               <p>{course.time}</p>
 
-              <p>{course.places}</p>
-
               <p>{course.price}</p>
 
               <button onClick={() => setSelectedCourse(course)}>
