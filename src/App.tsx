@@ -61,20 +61,20 @@ useEffect(() => {
 
   const courses = [
     {
-      title: "Yoga für Einsteiger",
-      level: "Einsteiger",
+      title: "Yoga für Fortgeschrittene",
+      level: "Fortgeschrittene",
       time: "Montag · 17:00 Uhr",
       price: "12€",
     },
     {
-      title: "Abend Flow Yoga",
-      level: "Mittelstufe",
+      title: "Einsteiger Yoga",
+      level: "Einsteiger",
       time: "Dienstag · 17:00 Uhr",
       price: "12€",
     },
     {
-      title: "Ruhe & Balance",
-      level: "Alle Level",
+      title: "Yoga für Fortgeschrittene",
+      level: "Fortgeschrittene",
       time: "Dienstag · 18:30 Uhr",
       price: "12€",
     },
