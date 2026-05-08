@@ -49,7 +49,7 @@ html {
 
 .lotus {
   font-size: 36px;
-  margin: 400px auto;
+  margin: 400px ;
 }
 
 .hero-text {
@@ -320,7 +320,7 @@ html {
 .lotus-image {
   width: 500px;
   display: block;
-  margin: 0 auto -130px auto;
+  margin:150 auto -130px auto;
   opacity: 0.95;
 
   filter: drop-shadow(0 6px 18px rgba(180, 90, 150, 0.25));
@@ -335,7 +335,7 @@ html {
   width: 400px;
   display: block;
 
-  margin: 500px auto -120px auto;
+  margin: 0px auto -120px auto;
 
   opacity: 0.95;
 
