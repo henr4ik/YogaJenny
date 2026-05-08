@@ -63,7 +63,7 @@ html {
   display: flex;
   justify-content: center;
   gap: 20px;
-  margin-top: 00px;
+  margin-top: -150px;
 }
 
 .hero-buttons a {
