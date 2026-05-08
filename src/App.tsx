@@ -219,7 +219,7 @@ useEffect(() => {
         <img
           src="/lotus.png"
           alt="Lotus"
-          className="lotus-image"
+          className="contact-lotus"
         />
 
         <h2>Kontakt</h2>

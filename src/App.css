@@ -320,7 +320,7 @@ html {
 .lotus-image {
   width: 500px;
   display: block;
-  margin: -50px auto -130px auto;
+  margin: 70px auto -130px auto;
   opacity: 0.95;
 
   filter: drop-shadow(0 6px 18px rgba(180, 90, 150, 0.25));
@@ -362,4 +362,10 @@ html {
   font-size: 16px;
   font-weight: bold;
   color: #7a165c;
+}
+.contact-lotus {
+  width: 260px;
+
+  margin-top: -20px;
+  margin-bottom: -10px;
 }
