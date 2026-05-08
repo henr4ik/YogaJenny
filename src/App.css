@@ -54,7 +54,7 @@ html {
 
 .hero-text {
   max-width: 800px;
-  margin: 40px auto;
+  margin: -200px auto;
   font-size: 22px;
   line-height: 1.6;
 }
