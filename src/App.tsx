@@ -63,22 +63,19 @@ useEffect(() => {
     {
       title: "Yoga für Einsteiger",
       level: "Einsteiger",
-      time: "Montag · 18:00 Uhr",
-      places: "12 Plätze frei",
+      time: "Montag · 17:00 Uhr",
       price: "12€",
     },
     {
       title: "Abend Flow Yoga",
       level: "Mittelstufe",
-      time: "Mittwoch · 19:00 Uhr",
-      places: "12 Plätze frei",
+      time: "Dienstag · 17:00 Uhr",
       price: "12€",
     },
     {
       title: "Ruhe & Balance",
       level: "Alle Level",
-      time: "Freitag · 17:30 Uhr",
-      places: "10 Plätze frei",
+      time: "Dienstag · 18:30 Uhr",
       price: "12€",
     },
   ];
