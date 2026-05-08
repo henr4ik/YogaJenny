@@ -67,7 +67,7 @@ useEffect(() => {
       price: "12€",
     },
     {
-      title: "Yoga für Einsteiger",
+      title: "Yoga für\n Einsteiger",
       level: "Einsteiger",
       time: "Dienstag · 17:00 Uhr",
       price: "12€",
@@ -124,7 +124,9 @@ useEffect(() => {
 
               <p className="level">{course.level}</p>
 
-              <h3>{course.title}</h3>
+              <h3 style={{ whiteSpace: "pre-line" }}>
+              {course.title}
+              </h3>
 
               <p>{course.time}</p>
 
